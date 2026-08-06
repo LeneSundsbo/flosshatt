@@ -1,0 +1,88 @@
+/* ============================================================
+   ToggleSwitch component
+   ============================================================ */
+
+.ts-row--bordered {
+  border: 1.5px solid var(--color-neutral-9);
+}
+
+.ts-row {
+  position: relative;
+  display: inline-flex;
+  width: fit-content;
+  background: var(--color-neutral-0);
+  border-radius: var(--radius-full);
+  padding: var(--space-1);
+  gap: var(--space-1);
+  transition: background var(--transition-normal);
+}
+
+/* ── Success variant ───────────────────────────────────────── */
+.ts-row--success.ts-row--on {
+  background: var(--color-success-3);
+}
+
+.ts-row--success .ts-pill {
+  background: var(--color-neutral-9);
+}
+
+.ts-row--success.ts-row--on .ts-btn--active {
+  color: var(--color-success-3);
+}
+
+/* ── Neutral variant ───────────────────────────────────────── */
+.ts-row--neutral {
+  background: var(--color-neutral-0);
+}
+
+.ts-row--neutral .ts-pill {
+  background: var(--color-neutral-9);
+}
+
+.ts-row--neutral .ts-btn--active {
+  color: var(--color-neutral-0);
+}
+
+/* ── Glidende pille (felles) ───────────────────────────────── */
+.ts-pill {
+  position: absolute;
+  top: 3px;
+  height: calc(100% - 6px);
+  border-radius: var(--radius-full);
+  transition: left var(--transition-normal), width var(--transition-normal);
+  pointer-events: none;
+}
+
+/* ── Knapper (felles) ──────────────────────────────────────── */
+.ts-btn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-base);
+  color: var(--color-neutral-7);
+  background: transparent;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.ts-btn:hover:not(.ts-btn--active) {
+  color: var(--color-neutral-7);
+}
+
+.ts-btn--active {
+  color: var(--color-neutral-0);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Check-ikon */
+.ts-check {
+  flex-shrink: 0;
+}

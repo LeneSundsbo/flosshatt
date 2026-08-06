@@ -1,0 +1,11 @@
+/* ============================================================
+   FLOSSHATT — Token index
+   Importer denne én gang i main.jsx
+   ============================================================ */
+
+@import './colors.css';
+@import './typography.css';
+@import './spacing.css';
+@import './effects.css';
+@import './breakpoints.css';
+@import './widths.css';

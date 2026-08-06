@@ -1,0 +1,64 @@
+/* ============================================================
+   StickyNote component
+   ============================================================ */
+
+.sn-note {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: var(--sn-size, 240px);
+  min-height: var(--sn-size, 240px);
+  padding: var(--space-6);
+  background: var(--color-neutral-9);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-family-base);
+  transition:
+    opacity var(--transition-normal),
+    background var(--transition-normal);
+}
+
+.sn-note--checked {
+  opacity: 0.25;
+}
+
+/* ── Tekst ────────────────────────────────────────────────── */
+
+.sn-text {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-0);
+  line-height: var(--line-height-normal);
+  margin: 0;
+  transition: text-decoration var(--transition-fast);
+}
+
+.sn-note--checked .sn-text {
+  text-decoration: line-through;
+}
+
+/* ── Checkbox ─────────────────────────────────────────────── */
+
+.sn-checkbox {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-top: var(--space-4);
+  border: 2px solid var(--color-neutral-0);
+  border-radius: var(--radius-xs);
+  background: transparent;
+  color: var(--color-neutral-0);
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.sn-note--checked .sn-checkbox {
+  background: var(--color-neutral-0);
+  color: var(--color-neutral-9);
+}

@@ -1,0 +1,74 @@
+/* ============================================================
+   ThemeToggle — lys/mørk modus-bryter
+   Fast mørk bakgrunn uavhengig av aktivt tema.
+   ============================================================ */
+
+.tt-wrap {
+  position: relative;
+  display: inline-flex;
+  width: fit-content;
+  background: #110F14; /* neutral-9 hardkodet — skal ikke flippe med tema */
+  border-radius: var(--radius-full);
+  padding: var(--space-1);
+  gap: var(--space-1);
+}
+
+/* ── Glidende pill ────────────────────────────────────────── */
+
+.tt-pill {
+  position: absolute;
+  top: 4px;
+  height: calc(100% - 8px);
+  background: #FFFFFF; /* neutral-0 hardkodet */
+  border-radius: var(--radius-full);
+  transition: left var(--transition-normal), width var(--transition-normal);
+  pointer-events: none;
+}
+
+/* ── Dark mode — inverterte farger ───────────────────────── */
+
+[data-theme="dark"] .tt-wrap {
+  background: #EDE9F5; /* neutral-9-dk — lys bakgrunn */
+}
+
+[data-theme="dark"] .tt-pill {
+  background: #0D0B10; /* neutral-0-dk — mørk pill */
+}
+
+[data-theme="dark"] .tt-btn {
+  color: rgba(17, 15, 20, 0.35); /* mørk, dim */
+}
+
+[data-theme="dark"] .tt-btn--active {
+  color: #EDE9F5; /* lys — ikon på mørk pill */
+}
+
+[data-theme="dark"] .tt-btn:hover:not(.tt-btn--active) {
+  color: rgba(17, 15, 20, 0.65);
+}
+
+/* ── Ikoner ───────────────────────────────────────────────── */
+
+.tt-btn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.tt-btn--active {
+  color: #110F14; /* neutral-9 — ikon på hvit pill */
+}
+
+.tt-btn:hover:not(.tt-btn--active) {
+  color: rgba(255, 255, 255, 0.75);
+}

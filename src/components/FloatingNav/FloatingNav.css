@@ -1,0 +1,172 @@
+/* ============================================================
+   FloatingNav component
+   Fast navigasjonsbar nederst på skjermen.
+   Bredde tilpasset innholdet i baren (fit-content), sentrert – på alle
+   skjermstørrelser, ikke bare desktop.
+   ============================================================ */
+
+/* ── Bar ──────────────────────────────────────────────────── */
+
+.fn-bar {
+  position: fixed;
+  bottom: var(--space-5);
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2);
+
+  background: var(--color-neutral-0);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-lg);
+  z-index: 100;
+}
+
+@media (max-width: 480px) {
+  .fn-bar {
+    bottom: var(--space-4);
+  }
+
+  .fn-label--menu {
+    display: none;
+  }
+}
+
+/* ── Contained (showcase) ─────────────────────────────────── */
+
+.fn-bar--contained {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  width: fit-content;
+}
+
+/* ── Knapper (felles) ─────────────────────────────────────── */
+
+.fn-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  border: none;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.fn-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ── Glass-variant ────────────────────────────────────────── */
+
+.fn-bar--glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px) saturate(1.8);
+  -webkit-backdrop-filter: blur(8px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* ── Mørk bar-variant ─────────────────────────────────────── */
+
+.fn-bar--dark {
+  background: var(--color-neutral-9);
+}
+
+.fn-bar--dark .fn-btn--ghost {
+  color: var(--color-neutral-0);
+}
+
+.fn-bar--dark .fn-btn--ghost:hover:not(:disabled) {
+  background: var(--color-neutral-7);
+}
+
+.fn-bar--dark .fn-btn--ghost:active:not(:disabled) {
+  background: var(--color-neutral-7);
+}
+
+.fn-bar--dark .fn-btn--primary {
+  background: var(--color-neutral-0);
+  color: var(--color-neutral-9);
+}
+
+.fn-bar--dark .fn-btn--primary:hover:not(:disabled) {
+  background: var(--color-neutral-2);
+}
+
+.fn-bar--dark .fn-btn--primary:active:not(:disabled) {
+  background: var(--color-neutral-0);
+}
+
+/* ── First-variant ────────────────────────────────────────── */
+
+.fn-bar--first {
+  background: var(--color-first-3);
+}
+
+.fn-bar--first .fn-btn--ghost {
+  color: var(--color-neutral-9);
+}
+
+.fn-bar--first .fn-btn--ghost:hover:not(:disabled) {
+  background: var(--color-first-2);
+}
+
+.fn-bar--first .fn-btn--ghost:active:not(:disabled) {
+  background: var(--color-first-1);
+}
+
+.fn-bar--first .fn-btn--primary {
+  background: var(--color-neutral-9);
+  color: var(--color-first-3);
+}
+
+.fn-bar--first .fn-btn--primary:hover:not(:disabled) {
+  background: var(--color-neutral-7);
+}
+
+.fn-bar--first .fn-btn--primary:active:not(:disabled) {
+  background: var(--color-neutral-9);
+}
+
+/* ── Ghost-variant (Forrige + Oversikt) ───────────────────── */
+
+.fn-btn--ghost {
+  background: transparent;
+  color: var(--color-neutral-9);
+}
+
+.fn-btn--ghost:hover:not(:disabled) {
+  background: var(--color-neutral-2);
+}
+
+.fn-btn--ghost:active:not(:disabled) {
+  background: var(--color-neutral-3);
+}
+
+/* ── Primary-variant (Neste) ──────────────────────────────── */
+
+.fn-btn--primary {
+  background: var(--color-neutral-9);
+  color: var(--color-neutral-0);
+}
+
+.fn-btn--primary:hover:not(:disabled) {
+  background: var(--color-neutral-7);
+}
+
+.fn-btn--primary:active:not(:disabled) {
+  background: var(--color-neutral-9);
+}

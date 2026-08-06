@@ -1,0 +1,101 @@
+/* ============================================================
+   ExpandableCard component
+   ============================================================ */
+
+.ec-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: var(--bp-md);
+}
+
+/* Card */
+.ec-card {
+  background: var(--color-neutral-0);
+  border: none;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: box-shadow var(--transition-fast);
+}
+
+.ec-card--open {
+  box-shadow: var(--shadow-md);
+}
+
+/* Header */
+.ec-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-family-base);
+  transition: background var(--transition-fast);
+}
+
+.ec-header:hover {
+  background: var(--color-neutral-2);
+}
+
+.ec-header:active {
+  background: var(--color-neutral-9);
+  color: var(--color-neutral-0);
+}
+
+.ec-header:active .ec-title,
+.ec-header:active .ec-subtitle,
+.ec-header:active .ec-chevron {
+  color: var(--color-neutral-0);
+}
+
+.ec-card--open .ec-header {
+  border-bottom: 1px solid var(--color-neutral-2);
+}
+
+.ec-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.ec-title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-9);
+  line-height: var(--line-height-tight);
+}
+
+.ec-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-7);
+  line-height: var(--line-height-normal);
+}
+
+/* Chevron */
+.ec-chevron {
+  flex-shrink: 0;
+  color: var(--color-neutral-9);
+  transition: transform var(--transition-normal);
+}
+
+.ec-chevron--open {
+  transform: rotate(180deg);
+}
+
+/* Body / animated container */
+.ec-body {
+  overflow: hidden;
+  transition: max-height var(--transition-normal);
+}
+
+.ec-content {
+  padding: var(--space-5) var(--space-6);
+  font-size: var(--font-size-md);
+  color: var(--color-neutral-9);
+  line-height: var(--line-height-loose);
+}

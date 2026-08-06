@@ -1,0 +1,91 @@
+/* ============================================================
+   Card component
+   ============================================================ */
+
+.c-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: var(--bp-md);
+}
+
+/* Card */
+.c-card {
+  background: var(--color-neutral-0);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  container-type: inline-size;
+}
+
+/* Header */
+.c-header {
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--color-neutral-2);
+}
+
+.c-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.c-title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-9);
+  line-height: var(--line-height-tight);
+}
+
+.c-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-7);
+  line-height: var(--line-height-normal);
+}
+
+/* Glass-variant */
+.c-card--glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px) saturate(1.8);
+  -webkit-backdrop-filter: blur(4px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-lg);
+}
+
+.c-card--glass .c-header {
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Mørk variant */
+.c-card--dark {
+  background: var(--color-neutral-7);
+}
+
+.c-card--dark .c-header {
+  border-bottom-color: var(--color-neutral-9);
+}
+
+.c-card--dark .c-title,
+.c-card--dark .c-subtitle,
+.c-card--dark .c-content {
+  color: var(--color-neutral-0);
+}
+
+/* Content */
+.c-content {
+  padding: var(--space-5) var(--space-6);
+  font-size: var(--font-size-md);
+  color: var(--color-neutral-9);
+  line-height: var(--line-height-loose);
+}
+
+/* Container query — større padding når kortet er bredt */
+@container (min-width: 480px) {
+  .c-header {
+    padding: var(--space-6) var(--space-8);
+  }
+
+  .c-content {
+    padding: var(--space-6) var(--space-8);
+  }
+}

@@ -1,0 +1,37 @@
+/* ============================================================
+   FLOSSHATT — Typography
+   ============================================================
+   xs / sm / md : faste verdier (UI-labels og brødtekst)
+   lg → 6xl    : fluid via clamp() — skalerer jevnt
+                 mellom 480px (sm) og 1280px (xl)
+   ============================================================ */
+
+:root {
+  --font-family-base:    system-ui, -apple-system, sans-serif;
+  --font-family-heading: system-ui, -apple-system, sans-serif;
+
+  /* ── Faste størrelser ─────────────────────────────────── */
+  --font-size-xs:  0.75rem;  /* 12px */
+  --font-size-sm:  0.875rem; /* 14px */
+  --font-size-md:  1rem;     /* 16px */
+
+  /* ── Fluid størrelser (480px → 1280px) ────────────────── */
+  --font-size-lg:  clamp(1.125rem, calc(1.05rem  + 0.25vw), 1.25rem);  /* 18px → 20px */
+  --font-size-xl:  clamp(1.25rem,  calc(1.1rem   + 0.5vw),  1.5rem);   /* 20px → 24px */
+  --font-size-2xl: clamp(1.5rem,   calc(1.275rem + 0.75vw), 1.875rem); /* 24px → 30px */
+  --font-size-3xl: clamp(1.875rem, calc(1.5rem   + 1.25vw), 2.5rem);   /* 30px → 40px */
+  --font-size-4xl: clamp(2.25rem,  calc(1.8rem   + 1.5vw),  3rem);     /* 36px → 48px */
+  --font-size-5xl: clamp(3rem,     calc(2.4rem   + 2vw),    4rem);     /* 48px → 64px */
+  --font-size-6xl: clamp(3.75rem,  calc(3rem     + 2.5vw),  5rem);     /* 60px → 80px */
+
+  /* ── Vekt ─────────────────────────────────────────────── */
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  /* ── Linjehøyde ───────────────────────────────────────── */
+  --line-height-tight:  1.2;
+  --line-height-normal: 1.5;
+  --line-height-loose:  1.75;
+}

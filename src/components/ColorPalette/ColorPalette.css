@@ -1,0 +1,94 @@
+/* ============================================================
+   ColorPalette component
+   ============================================================ */
+
+.cp-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.cp-group-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-9);
+  margin-bottom: var(--space-4);
+}
+
+/* ── Block ────────────────────────────────────────────────── */
+
+.cp-block {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Band (light / dark) ──────────────────────────────────── */
+
+.cp-band {
+  display: flex;
+  flex-direction: column;
+}
+
+.cp-band--light {
+  background: var(--color-neutral-0);
+}
+
+.cp-band--dark {
+  background: var(--color-neutral-0); /* resolves to dark bg via data-theme */
+  flex-direction: column-reverse;     /* chips over labels */
+}
+
+/* ── Rader ────────────────────────────────────────────────── */
+
+.cp-row {
+  display: grid;
+  grid-template-columns: repeat(var(--cp-cols), 1fr);
+}
+
+/* ── Labels ───────────────────────────────────────────────── */
+
+.cp-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-3) var(--space-3) var(--space-2);
+  background: var(--color-neutral-0);
+}
+
+.cp-label-name {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cp-label-hex {
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-7);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Chips ────────────────────────────────────────────────── */
+
+.cp-chip {
+  display: block;
+  width: 100%;
+  height: clamp(60px, 10vw, 100px);
+  border: none;
+  cursor: pointer;
+  transition: filter var(--transition-fast);
+}
+
+.cp-chip:hover {
+  filter: brightness(1.1);
+}
+
+/* Hint */
+.cp-hint {
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-7);
+  margin-top: var(--space-2);
+}

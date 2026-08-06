@@ -1,0 +1,103 @@
+/* ============================================================
+   IconCard component
+   ============================================================ */
+
+/* ── Grid layout (standard, 2 kolonner) ───────────────────── */
+
+.icc-group--grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  max-width: var(--bp-md);
+}
+
+.icc-group--grid .icc-card {
+  flex-direction: column;
+}
+
+.icc-group--grid .icc-icon {
+  margin-bottom: var(--space-6);
+}
+
+/* ── List layout (ikon ved siden av tekst) ────────────────── */
+
+.icc-group--list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: var(--bp-md);
+}
+
+.icc-group--list .icc-card {
+  flex-direction: column;
+}
+
+@media (min-width: 480px) {
+  .icc-group--list .icc-card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-5);
+  }
+
+  .icc-group--list .icc-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+}
+
+/* ── Card (felles) ────────────────────────────────────────── */
+
+.icc-card {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-10);
+  background: var(--color-neutral-9);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-family-base);
+}
+
+/* ── Icon ─────────────────────────────────────────────────── */
+
+.icc-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--color-first-3);
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+}
+
+.icc-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Text wrapper ─────────────────────────────────────────── */
+
+.icc-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ── Heading ──────────────────────────────────────────────── */
+
+.icc-heading {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-0);
+  line-height: var(--line-height-tight);
+  margin: 0;
+}
+
+/* ── Body ─────────────────────────────────────────────────── */
+
+.icc-body {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-neutral-0);
+  line-height: var(--line-height-loose);
+  margin: 0;
+}

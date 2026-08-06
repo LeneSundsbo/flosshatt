@@ -1,0 +1,219 @@
+/* ============================================================
+   PricingTable component
+   ============================================================ */
+
+.pt-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-8);
+  font-family: var(--font-family-base);
+}
+
+/* Header */
+.pt-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.pt-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-9);
+  margin: 0 0 var(--space-2);
+  line-height: var(--line-height-tight);
+}
+
+.pt-subtitle {
+  font-size: var(--font-size-md);
+  color: var(--color-neutral-7);
+  margin: 0 0 var(--space-6);
+}
+
+/* Toggle */
+.pt-toggle {
+  display: inline-flex;
+  background: var(--color-neutral-1);
+  border-radius: var(--radius-full);
+  padding: var(--space-1);
+  gap: var(--space-1);
+}
+
+.pt-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-5);
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-base);
+  color: var(--color-neutral-7);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pt-toggle-btn--active {
+  background: var(--color-neutral-0);
+  color: var(--color-neutral-9);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Badge */
+.pt-badge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  background: var(--color-second-3);
+  color: var(--color-neutral-9);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+}
+
+/* Cards */
+.pt-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .pt-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pt-card {
+  background: var(--color-neutral-0);
+  border: 1px solid var(--color-neutral-2);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: box-shadow var(--transition-fast);
+}
+
+.pt-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Card content */
+.pt-card-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-first-7);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pt-price-main {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+
+.pt-price-amount {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-9);
+  line-height: var(--line-height-tight);
+}
+
+.pt-price-period {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-7);
+}
+
+.pt-price-annual {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-7);
+}
+
+.pt-savings {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-success-7);
+}
+
+.pt-savings-hint {
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-7);
+}
+
+/* VAT note */
+.pt-vat-note {
+  text-align: center;
+  margin-top: var(--space-6);
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-7);
+}
+
+/* ============================================================
+   Matrix variant
+   ============================================================ */
+
+.pt-matrix {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid var(--color-neutral-2);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.pt-matrix-cell {
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--color-neutral-2);
+  border-right: 1px solid var(--color-neutral-2);
+}
+
+.pt-matrix-cell:nth-child(3n) {
+  border-right: none;
+}
+
+.pt-matrix-cell:nth-last-child(-n+3) {
+  border-bottom: none;
+}
+
+.pt-matrix-corner {
+  background: var(--color-neutral-1);
+}
+
+.pt-matrix-col-header {
+  background: var(--color-neutral-1);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-7);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.pt-matrix-col-header--annual {
+  color: var(--color-first-7);
+}
+
+.pt-matrix-row-header {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-7);
+  display: flex;
+  align-items: center;
+  background: var(--color-neutral-1);
+}
+
+.pt-matrix-price {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  background: var(--color-neutral-0);
+}
+
+.pt-matrix-price--annual {
+  background: color-mix(in srgb, var(--color-first-1) 40%, white);
+}
+
+.pt-matrix-price .pt-price-main {
+  margin-top: 0;
+}

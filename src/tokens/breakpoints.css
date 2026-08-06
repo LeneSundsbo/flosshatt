@@ -1,0 +1,21 @@
+/* ============================================================
+   FLOSSHATT — Breakpoints
+
+   NB: CSS custom properties kan ikke brukes direkte i
+   @media-regler. Bruk de faktiske verdiene i koden din,
+   og bruk variablene kun som referanse eller i JavaScript.
+
+   Bruk slik i CSS:
+   @media (min-width: 768px) { ... }
+
+   Bruk slik i JavaScript:
+   getComputedStyle(document.documentElement).getPropertyValue('--bp-md')
+   ============================================================ */
+
+:root {
+  --bp-sm:  480px;   /* Mobil, stor */
+  --bp-md:  768px;   /* Nettbrett */
+  --bp-lg:  1024px;  /* Desktop, liten */
+  --bp-xl:  1280px;  /* Desktop */
+  --bp-2xl: 1536px;  /* Desktop, stor */
+}

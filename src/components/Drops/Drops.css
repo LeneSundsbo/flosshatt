@@ -1,0 +1,89 @@
+/* ============================================================
+   Drops — animerte vanndråper
+   Gjennomsiktig dråpeform med glass/linse-effekt.
+   Ekte pikselforstørrelse krever canvas — dette er en
+   overbevisende visuell illusjon via backdrop-filter + glans.
+   ============================================================ */
+
+/* ── Layer ────────────────────────────────────────────────── */
+
+.drops-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* ── Dråpeform ────────────────────────────────────────────── */
+
+.drop-item {
+  position: absolute;
+
+  /* Rund bunn, smalere/spissere topp */
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+
+  /* Gjennomsiktig — gjenspeiler fargen under */
+  background: transparent;
+  backdrop-filter: brightness(0.95) saturate(1.15) contrast(1.04);
+
+  /* Glans og dybde */
+  box-shadow:
+    inset 0 -2px 5px  rgba(255, 255, 255, 0.25),
+    inset 2px 2px 6px rgba(255, 255, 255, 0.3),
+    0 3px 8px          rgba(0, 0, 0, 0.10),
+    0 1px 2px          rgba(0, 0, 0, 0.06);
+
+  will-change: transform, top;
+}
+
+/* ── Stripe som tørker opp ────────────────────────────────── */
+
+.drop-trail {
+  position: absolute;
+  /* Kile: smal øverst, bred nederst */
+  clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+  background: rgba(0, 0, 0, 0.007);
+  backdrop-filter: brightness(0.985);
+  pointer-events: none;
+  animation: trail-fade 2.8s ease-out forwards;
+}
+
+@keyframes trail-fade {
+  0%   { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+
+/* ── Primær glansrefleks (øvre venstre) ───────────────────── */
+
+.drop-item::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 18%;
+  width: 32%;
+  height: 26%;
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgba(255, 255, 255, 0.85),
+    transparent 65%
+  );
+  border-radius: 50%;
+}
+
+/* ── Sekundær glansrefleks (nedre høyre) ──────────────────── */
+
+.drop-item::after {
+  content: '';
+  position: absolute;
+  bottom: 22%;
+  right: 18%;
+  width: 14%;
+  height: 11%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.45),
+    transparent 70%
+  );
+  border-radius: 50%;
+}

@@ -1,0 +1,49 @@
+/* ============================================================
+   ToggleRow component
+   ============================================================ */
+
+.tr-row {
+  position: relative;
+  display: inline-flex;
+  width: fit-content;
+  background: var(--color-neutral-0);
+  border-radius: var(--radius-full);
+  padding: var(--space-1);
+  gap: var(--space-1);
+}
+
+/* Glidende pille */
+.tr-pill {
+  position: absolute;
+  top: 3px;
+  height: calc(100% - 6px);
+  background: var(--color-neutral-9);
+  border-radius: var(--radius-full);
+  transition: left var(--transition-normal), width var(--transition-normal);
+  pointer-events: none;
+}
+
+.tr-btn {
+  position: relative; /* ligger over pillen */
+  z-index: 1;
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-base);
+  color: var(--color-neutral-7);
+  background: transparent;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.tr-btn:hover:not(.tr-btn--active) {
+  color: var(--color-neutral-7);
+}
+
+.tr-btn--active {
+  color: var(--color-neutral-0);
+  font-weight: var(--font-weight-semibold);
+}

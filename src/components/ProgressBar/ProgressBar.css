@@ -1,0 +1,50 @@
+/* ============================================================
+   ProgressBar component
+   ============================================================ */
+
+.pb-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+/* ── Spor ─────────────────────────────────────────────────── */
+
+.pb-track {
+  width: 100%;
+  height: 12px;
+  background: var(--color-neutral-2);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.pb-fill {
+  height: 100%;
+  background: var(--color-first-3);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+/* ── Meta-rad ─────────────────────────────────────────────── */
+
+.pb-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-4);
+}
+
+.pb-title {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-9);
+}
+
+.pb-fraction {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-9);
+  white-space: nowrap;
+}

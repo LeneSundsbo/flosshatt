@@ -1,0 +1,13 @@
+/* ============================================================
+   FLOSSHATT — Content widths
+   ch-verdier skalerer med skriftstørrelsen og holder
+   linjelengden lesbar uansett zoom eller fontinnstilling.
+   ============================================================ */
+
+:root {
+  --width-narrow:  45ch;   /* Ingress, sitat, smal kolonne     */
+  --width-prose:   65ch;   /* Standard brødtekst               */
+  --width-content: 80ch;   /* Bred tekstkolonne, maks WCAG AAA */
+  --width-layout:  768px;  /* Generell innholdsbredde          */
+  --width-wide:    1200px; /* Full sidelayout                  */
+}

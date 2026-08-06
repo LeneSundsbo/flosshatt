@@ -1,0 +1,31 @@
+/* ============================================================
+   FLOSSHATT — Spacing
+   ============================================================
+   space-0-5 → space-6  : faste verdier (detaljer, gap, padding)
+   space-8   → space-64 : fluid via clamp() — skalerer jevnt
+                          mellom 480px (sm) og 1280px (xl)
+   Formel: clamp(mobil, calc(intercept + slope * vw), desktop)
+   ============================================================ */
+
+:root {
+  /* ── Faste tokens ─────────────────────────────────────── */
+  --space-0-5: 0.125rem; /*  2px */
+  --space-1:   0.25rem;  /*  4px */
+  --space-2:   0.5rem;   /*  8px */
+  --space-3:   0.75rem;  /* 12px */
+  --space-4:   1rem;     /* 16px */
+  --space-5:   1.25rem;  /* 20px */
+  --space-6:   1.5rem;   /* 24px */
+
+  /* ── Fluid tokens (480px → 1280px) ───────────────────── */
+  --space-8:  clamp(1.5rem,  calc(1.2rem +  1vw), 2rem);    /*  24px → 32px  */
+  --space-10: clamp(2rem,    calc(1.7rem +  1vw), 2.5rem);  /*  32px → 40px  */
+  --space-12: clamp(2.5rem,  calc(2.2rem +  1vw), 3rem);    /*  40px → 48px  */
+  --space-16: clamp(3rem,    calc(2.4rem +  2vw), 4rem);    /*  48px → 64px  */
+  --space-20: clamp(3.5rem,  calc(2.6rem +  3vw), 5rem);    /*  56px → 80px  */
+  --space-24: clamp(4rem,    calc(2.8rem +  4vw), 6rem);    /*  64px → 96px  */
+  --space-32: clamp(5rem,    calc(3.2rem +  6vw), 8rem);    /*  80px → 128px */
+  --space-40: clamp(6rem,    calc(3.6rem +  8vw), 10rem);   /*  96px → 160px */
+  --space-48: clamp(7rem,    calc(4rem   + 10vw), 12rem);   /* 112px → 192px */
+  --space-64: clamp(8rem,    calc(3.2rem + 16vw), 16rem);   /* 128px → 256px */
+}

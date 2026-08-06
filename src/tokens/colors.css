@@ -1,0 +1,209 @@
+/* ============================================================
+   FLOSSHATT — Colors
+   Scale: 1 (lightest) → 9 (darkest). Steps 4–6 can be added later.
+   Dark mode tokens use -dk suffix and are defined below light mode.
+   ============================================================ */
+
+:root {
+
+  /* ── Light mode ─────────────────────────────────────────── */
+
+  /* First (purple) */
+  --color-first-1: #E9E1FA;
+  --color-first-2: #D4BFFF;
+  --color-first-3: #BB99FF;
+  --color-first-7: #452880;
+  --color-first-8: #351D66;
+  --color-first-9: #26134D;
+
+  /* Second (teal) */
+  --color-second-1: #99FFEE;
+  --color-second-2: #80FFEA;
+  --color-second-3: #00F5CC;
+  --color-second-7: #006655;
+  --color-second-8: #004D40;
+  --color-second-9: #00332A;
+
+  /* Neutral */
+  --color-neutral-0: #FFFFFF;
+  --color-neutral-1: #F5F2FA;  /*not for text on light backgrounds*/
+  --color-neutral-2: #DFDCE5;  /*not for text on light backgrounds*/
+  --color-neutral-3: #CAC7D1;  /*not for text on light backgrounds*/
+  --color-neutral-7: #5C5766;
+  --color-neutral-8: #35313D;
+  --color-neutral-9: #110F14;
+
+  /* Success */
+  --color-success-1: #B2FFF2;
+  --color-success-2: #80FFEA;
+  --color-success-3: #00F5CC;
+  --color-success-7: #006655;
+  --color-success-8: #004D40;
+  --color-success-9: #00332A;
+
+  /* Warning */
+  --color-warning-1: #FAFAD4;
+  --color-warning-2: #ECF2AA;
+  --color-warning-3: #E3EB8D;
+  --color-warning-7: #616627;
+  --color-warning-8: #494D1F;
+  --color-warning-9: #303314;
+
+  /* Error */
+  --color-error-1: #FAD2DF;
+  --color-error-2: #F2BBCD;
+  --color-error-3: #F0A3BD;
+  --color-error-7: #804055;
+  --color-error-8: #66293D;
+  --color-error-9: #4D1729;
+
+  /* ── Dark mode ──────────────────────────────────────────── */
+
+  /* First (purple) — dypere bakgrunner, lysere aksenter */
+  --color-first-1-dk: #26134D;
+  --color-first-2-dk: #351D66;
+  --color-first-3-dk: #452880;
+  --color-first-7-dk: #C9AEFF;
+  --color-first-8-dk: #D4BFFF;
+  --color-first-9-dk: #E9E1FA;
+
+  /* Second (teal) — dype teal-bakgrunner, lyse aksenter */
+  --color-second-1-dk: #052E27;
+  --color-second-2-dk: #004D40;
+  --color-second-3-dk: #006655;
+  --color-second-7-dk: #00F5CC;
+  --color-second-8-dk: #80FFEA;
+  --color-second-9-dk: #B2FFF2;
+
+  /* Neutral — invertert skala */
+  --color-neutral-0-dk: #0F1114;
+  --color-neutral-1-dk: #1D1F24;
+  --color-neutral-2-dk: #25282E;
+  --color-neutral-3-dk: #3D424D;
+  --color-neutral-7-dk: #CAC7D1;
+  --color-neutral-8-dk: #DFDCE5;
+  --color-neutral-9-dk: #F5F2FA;
+
+  /* Success */
+  --color-success-1-dk: #052E27;
+  --color-success-2-dk: #004D40;
+  --color-success-3-dk: #006655;
+  --color-success-7-dk: #00F5CC;
+  --color-success-8-dk: #80FFEA;
+  --color-success-9-dk: #B2FFF2;
+
+  /* Warning */
+  --color-warning-1-dk: #303314;
+  --color-warning-2-dk: #494D1F;
+  --color-warning-3-dk: #616627;
+  --color-warning-7-dk: #E3EB8D;
+  --color-warning-8-dk: #ECF2AA;
+  --color-warning-9-dk: #FAFAD4;
+
+  /* Error */
+  --color-error-1-dk: #4D1729;
+  --color-error-2-dk: #66293D;
+  --color-error-3-dk: #804055;
+  --color-error-7-dk: #F0A3BD;
+  --color-error-8-dk: #F2BBCD;
+  --color-error-9-dk: #FAD2DF;
+
+  /* ── Dark mode override ─────────────────────────────────── */
+  /* Sett data-theme="dark" på <html> for å aktivere          */
+
+}
+
+/* Tving light mode på et element (f.eks. i ColorPalette-showcase) */
+[data-theme="light"] {
+  --color-first-1: #E9E1FA;
+  --color-first-2: #D4BFFF;
+  --color-first-3: #BB99FF;
+  --color-first-7: #361F66;
+  --color-first-8: #2E1A55;
+  --color-first-9: #26134D;
+
+  --color-second-1: #99FFEE;
+  --color-second-2: #80FFEA;
+  --color-second-3: #00F5CC;
+  --color-second-7: #004D40;
+  --color-second-8: #003D36;
+  --color-second-9: #00332A;
+
+  --color-neutral-0: #FFFFFF;
+  --color-neutral-1: #F5F2FA;
+  --color-neutral-2: #DFDCE5;
+  --color-neutral-3: #CAC7D1;
+  --color-neutral-7: #35313D;
+  --color-neutral-8: #201D26;
+  --color-neutral-9: #110F14;
+
+  --color-success-1: #B2FFF2;
+  --color-success-2: #80FFEA;
+  --color-success-3: #00F5CC;
+  --color-success-7: #004D40;
+  --color-success-8: #003D36;
+  --color-success-9: #00332A;
+
+  --color-warning-1: #FAFAD4;
+  --color-warning-2: #ECF2AA;
+  --color-warning-3: #E3EB8D;
+  --color-warning-7: #494D1F;
+  --color-warning-8: #3A3D18;
+  --color-warning-9: #303314;
+
+  --color-error-1: #FAD2DF;
+  --color-error-2: #F2BBCD;
+  --color-error-3: #F0A3BD;
+  --color-error-7: #66293D;
+  --color-error-8: #561F32;
+  --color-error-9: #4D1729;
+}
+
+[data-theme="dark"] {
+  --color-first-1: var(--color-first-1-dk);
+  --color-first-2: var(--color-first-2-dk);
+  --color-first-3: var(--color-first-3-dk);
+  --color-first-7: var(--color-first-7-dk);
+  --color-first-8: var(--color-first-8-dk);
+  --color-first-9: var(--color-first-9-dk);
+
+  --color-second-1: var(--color-second-1-dk);
+  --color-second-2: var(--color-second-2-dk);
+  --color-second-3: var(--color-second-3-dk);
+  --color-second-7: var(--color-second-7-dk);
+  --color-second-8: var(--color-second-8-dk);
+  --color-second-9: var(--color-second-9-dk);
+
+  --color-neutral-0: var(--color-neutral-0-dk);
+  --color-neutral-1: var(--color-neutral-1-dk);
+  --color-neutral-2: var(--color-neutral-2-dk);
+  --color-neutral-3: var(--color-neutral-3-dk);
+  --color-neutral-7: var(--color-neutral-7-dk);
+  --color-neutral-8: var(--color-neutral-8-dk);
+  --color-neutral-9: var(--color-neutral-9-dk);
+
+  --color-success-1: var(--color-success-1-dk);
+  --color-success-2: var(--color-success-2-dk);
+  --color-success-3: var(--color-success-3-dk);
+  --color-success-7: var(--color-success-7-dk);
+  --color-success-8: var(--color-success-8-dk);
+  --color-success-9: var(--color-success-9-dk);
+
+  --color-warning-1: var(--color-warning-1-dk);
+  --color-warning-2: var(--color-warning-2-dk);
+  --color-warning-3: var(--color-warning-3-dk);
+  --color-warning-7: var(--color-warning-7-dk);
+  --color-warning-8: var(--color-warning-8-dk);
+  --color-warning-9: var(--color-warning-9-dk);
+
+  --color-error-1: var(--color-error-1-dk);
+  --color-error-2: var(--color-error-2-dk);
+  --color-error-3: var(--color-error-3-dk);
+  --color-error-7: var(--color-error-7-dk);
+  --color-error-8: var(--color-error-8-dk);
+  --color-error-9: var(--color-error-9-dk);
+
+  --shadow-sm: var(--shadow-sm-dk);
+  --shadow-md: var(--shadow-md-dk);
+  --shadow-lg: var(--shadow-lg-dk);
+}

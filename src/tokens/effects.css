@@ -1,0 +1,45 @@
+/* ============================================================
+   FLOSSHATT — Effects
+   ============================================================ */
+
+:root {
+  /* Border radius */
+  --radius-xs:   0.25rem;
+  --radius-s:   0.5rem;
+  --radius-m:   0.75rem;
+  --radius-lg:   1rem;
+  --radius-xl:   1.5rem;
+  --radius-full: 9999px;
+
+  /* Shadows — to lag: ambient (stor, myk) + direct (liten, skarp) */
+  --shadow-sm:
+    0 1px 3px 0   rgb(17 20 26 / 0.07),
+    0 1px 2px -1px rgb(17 20 26 / 0.05);
+
+  --shadow-md:
+    0 6px 16px -2px rgb(17 20 26 / 0.10),
+    0 2px 6px  -2px rgb(17 20 26 / 0.06);
+
+  --shadow-lg:
+    0 20px 40px -4px rgb(17 20 26 / 0.12),
+    0  6px 16px -4px rgb(17 20 26 / 0.07);
+
+  /* Dark mode shadows — dypere + subtil lyskant */
+  --shadow-sm-dk:
+    0 1px 3px 0    rgb(0 0 0 / 0.40),
+    0 0 0 1px      rgb(255 255 255 / 0.06);
+
+  --shadow-md-dk:
+    0 6px 16px -2px rgb(0 0 0 / 0.50),
+    0 2px 6px  -2px rgb(0 0 0 / 0.30),
+    0 0 0 1px      rgb(255 255 255 / 0.06);
+
+  --shadow-lg-dk:
+    0 20px 40px -4px rgb(0 0 0 / 0.60),
+    0  6px 16px -4px rgb(0 0 0 / 0.40),
+    0 0 0 1px       rgb(255 255 255 / 0.06);
+
+  /* Transitions */
+  --transition-fast:   150ms ease;
+  --transition-normal: 250ms ease;
+}
