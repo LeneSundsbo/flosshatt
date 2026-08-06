@@ -4,7 +4,7 @@ import './StickyNote.css'
 
 export function StickyNote({ children, defaultChecked = false, onChange }) {
   const [checked, setChecked] = useState(defaultChecked)
-  const rotation = useRef(Math.random() * 10 - 5)
+  const rotation = useRef(Math.random() * 6 - 3)
   const size = useRef(Math.round(220 + Math.random() * 40))
 
   function handleCheck() {

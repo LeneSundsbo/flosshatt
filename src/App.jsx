@@ -6,7 +6,6 @@ import { ThemeToggle } from './components/ThemeToggle/ThemeToggle'
 import { Logo } from './graphics/Logo'
 import { DropsLayer } from './components/Drops/Drops'
 import { StickyNote } from './components/StickyNote/StickyNote'
-import { PricingTable } from './components/PricingTable/PricingTable'
 import { ColorPalette } from './components/ColorPalette/ColorPalette'
 import { ExpandableCard, ExpandableCardGroup } from './components/ExpandableCard/ExpandableCard'
 import { ToggleRow } from './components/ToggleRow/ToggleRow'
@@ -252,8 +251,6 @@ const NAV = [
           </div>
         ),
       },
-      { id: 'pricing-table-toggle', label: 'Pricing Table — Toggle', component: <PricingTable variant="toggle" /> },
-      { id: 'pricing-table-matrix', label: 'Pricing Table — Matrix', component: <PricingTable variant="matrix" /> },
       {
         id: 'progress-bar',
         label: 'Progress Bar',
@@ -350,8 +347,8 @@ export default function App() {
     <div className="app">
       <aside className="sidebar">
         <div className="sidebar-logo">
-          <Logo height={16} className="sidebar-logo-svg" />
-          <span className="sidebar-logo-tag">Design System</span>
+          <Logo height={28} className="sidebar-logo-svg" />
+          <span className="sidebar-logo-tag">Designsystem</span>
         </div>
 
         <ThemeToggle />
