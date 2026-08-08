@@ -10,6 +10,7 @@ import { ColorPalette } from './components/ColorPalette/ColorPalette'
 import { ExpandableCard, ExpandableCardGroup } from './components/ExpandableCard/ExpandableCard'
 import { ToggleRow } from './components/ToggleRow/ToggleRow'
 import { ToggleSwitch } from './components/ToggleSwitch/ToggleSwitch'
+import { Button } from './components/Button/Button'
 import { OptionCard, OptionCardGroup } from './components/OptionCard/OptionCard'
 import { Card, CardGroup } from './components/Card/Card'
 import { IconCard, IconCardGroup } from './components/IconCard/IconCard'
@@ -54,7 +55,7 @@ const NAV = [
         component: (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-12)' }}>
             <div>
-              <p style={{ fontSize: 'var(--font-size-xs)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-4)' }}>Standard (md)</p>
+              <p style={{ fontSize: 'var(--font-size-sm)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-4)' }}>Standard (md)</p>
               <div className="prose">
                 <h1>Overskrift h1</h1>
                 <h2>Overskrift h2</h2>
@@ -70,7 +71,7 @@ const NAV = [
               </div>
             </div>
             <div>
-              <p style={{ fontSize: 'var(--font-size-xs)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-4)' }}>Stor (lg)</p>
+              <p style={{ fontSize: 'var(--font-size-sm)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-4)' }}>Stor (lg)</p>
               <div className="prose prose--lg">
                 <p>Dette er et avsnitt i stor størrelse, egnet for ingress eller fremhevet innhold der teksten skal ha ekstra tyngde.</p>
                 <p>Fluid skalering sørger for at teksten er behagelig å lese på alle skjermstørrelser.</p>
@@ -84,6 +85,64 @@ const NAV = [
   {
     section: 'Komponenter',
     items: [
+      {
+        id: 'button',
+        label: 'Button',
+        component: (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-10)' }}>
+
+            {/* Varianter */}
+            <div>
+              <p style={{ fontSize: 'var(--font-size-sm)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-4)' }}>Varianter</p>
+              <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap', alignItems: 'center' }}>
+                <Button variant="primary">Primary</Button>
+                <Button variant="secondary">Secondary</Button>
+                <Button variant="ghost">Ghost</Button>
+              </div>
+            </div>
+
+            {/* Størrelser */}
+            <div>
+              <p style={{ fontSize: 'var(--font-size-sm)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-4)' }}>Størrelser</p>
+              <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap', alignItems: 'center' }}>
+                <Button size="sm">Liten</Button>
+                <Button size="md">Medium</Button>
+                <Button size="lg">Stor</Button>
+              </div>
+            </div>
+
+            {/* Med ikoner */}
+            <div>
+              <p style={{ fontSize: 'var(--font-size-sm)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-4)' }}>Med ikon</p>
+              <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap', alignItems: 'center' }}>
+                <Button variant="primary" iconLeft={<Shield size={16} weight="bold" />}>Med ikon venstre</Button>
+                <Button variant="secondary" iconRight={<ChartLine size={16} weight="bold" />}>Med ikon høyre</Button>
+                <Button variant="ghost" iconLeft={<Users size={16} weight="bold" />}>Ghost med ikon</Button>
+              </div>
+            </div>
+
+            {/* Deaktivert */}
+            <div>
+              <p style={{ fontSize: 'var(--font-size-sm)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-4)' }}>Deaktivert</p>
+              <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap', alignItems: 'center' }}>
+                <Button variant="primary" disabled>Primary</Button>
+                <Button variant="secondary" disabled>Secondary</Button>
+                <Button variant="ghost" disabled>Ghost</Button>
+              </div>
+            </div>
+
+            {/* Full bredde */}
+            <div>
+              <p style={{ fontSize: 'var(--font-size-sm)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-4)' }}>Full bredde</p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', maxWidth: '320px' }}>
+                <Button variant="primary" fullWidth>Full bredde</Button>
+                <Button variant="ghost" fullWidth>Full bredde ghost</Button>
+              </div>
+            </div>
+
+          </div>
+        ),
+      },
       {
         id: 'option-card',
         label: 'Option Card',
@@ -234,7 +293,7 @@ const NAV = [
         component: (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <p style={{ fontSize: 'var(--font-size-xs)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)' }}>Success (standard)</p>
+              <p style={{ fontSize: 'var(--font-size-sm)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)' }}>Success (standard)</p>
               <ToggleSwitch />
               <ToggleSwitch offLabel="Inaktiv" onLabel="Aktiv" defaultChecked />
               <ToggleSwitch offLabel="Skjult" onLabel="Synlig" />
@@ -242,7 +301,7 @@ const NAV = [
               <ToggleSwitch offLabel="Inaktiv" onLabel="Aktiv" defaultChecked bordered />
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <p style={{ fontSize: 'var(--font-size-xs)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)' }}>Neutral</p>
+              <p style={{ fontSize: 'var(--font-size-sm)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)' }}>Neutral</p>
               <ToggleSwitch variant="neutral" />
               <ToggleSwitch variant="neutral" offLabel="Nei" onLabel="Ja" defaultChecked />
               <ToggleSwitch variant="neutral" bordered />
@@ -274,7 +333,7 @@ const NAV = [
               { variant: 'first', label: 'first' },
             ].map(({ variant, label }) => (
               <div key={variant}>
-                <p style={{ fontSize: 'var(--font-size-xs)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-3)' }}>{label}</p>
+                <p style={{ fontSize: 'var(--font-size-sm)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-3)' }}>{label}</p>
                 <FloatingNav
                   contained
                   variant={variant}
@@ -299,7 +358,7 @@ const NAV = [
               { variant: 'glass', label: 'glass' },
             ].map(({ variant, label }) => (
               <div key={variant}>
-                <p style={{ fontSize: 'var(--font-size-xs)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-3)' }}>{label}</p>
+                <p style={{ fontSize: 'var(--font-size-sm)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-3)' }}>{label}</p>
                 <FloatingMenu
                   contained
                   variant={variant}

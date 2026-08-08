@@ -26,9 +26,9 @@
 
   /* Neutral */
   --color-neutral-0: #FFFFFF;
-  --color-neutral-1: #F5F2FA;  /*not for text on light backgrounds*/
-  --color-neutral-2: #DFDCE5;  /*not for text on light backgrounds*/
-  --color-neutral-3: #CAC7D1;  /*not for text on light backgrounds*/
+  --color-neutral-1: #F2F5FA;  /*not for text on light backgrounds*/
+  --color-neutral-2: #DCDFE5;  /*not for text on light backgrounds*/
+  --color-neutral-3: #C7CAD1;  /*not for text on light backgrounds*/
   --color-neutral-7: #5C5766;
   --color-neutral-8: #35313D;
   --color-neutral-9: #110F14;
