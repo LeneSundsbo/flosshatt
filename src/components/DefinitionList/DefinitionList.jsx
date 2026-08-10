@@ -1,5 +1,24 @@
 import './DefinitionList.css'
 
+// ─── HTML-byggere — PORTABLE TO VANILLA JS ───────────────────────────────────
+// Returnerer HTML-strenger. Ingen React-avhengigheter.
+// Vanilla JS-bruk:
+//   el.innerHTML = buildDefinitionList(items)
+
+/** Bygger én rad: <div class="dl-row"><dt>…</dt><dd>…</dd></div> */
+export function buildDefinitionListRow({ term, description }) {
+  const paragraphs = Array.isArray(description) ? description : [description]
+  const ps = paragraphs.map(p => `<p>${p}</p>`).join('')
+  return `<div class="dl-row"><dt class="dl-term">${term}</dt><dd class="dl-desc">${ps}</dd></div>`
+}
+
+/** Bygger hele listen: <dl class="dl">…</dl> */
+export function buildDefinitionList(items) {
+  return `<dl class="dl">${items.map(buildDefinitionListRow).join('')}</dl>`
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 /**
  * DefinitionList — to-kolonne-liste for begrep og forklaringer.
  *

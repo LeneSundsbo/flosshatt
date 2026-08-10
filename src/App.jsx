@@ -19,6 +19,134 @@ import { DefinitionList } from './components/DefinitionList/DefinitionList'
 import { Shield, Clock, Users, ChartLine } from '@phosphor-icons/react'
 import './App.css'
 
+// ─── Demo-nav for Sidebar showcase ───────────────────────────────────────────
+const SIDEBAR_DEMO_NAV = [
+  {
+    section: 'Tokens',
+    items: [
+      { id: 'sd-colors',     label: 'Farger'     },
+      { id: 'sd-typography', label: 'Typografi'  },
+      { id: 'sd-spacing',    label: 'Avstander'  },
+    ],
+  },
+  {
+    section: 'Komponenter',
+    items: [
+      { id: 'sd-button',  label: 'Button'  },
+      { id: 'sd-card',    label: 'Card'    },
+      { id: 'sd-sidebar', label: 'Sidebar' },
+    ],
+  },
+]
+
+const SIDEBAR_DEMO_NAV_CLICKABLE = [
+  {
+    section: 'Navigasjon',
+    id: 'sd-nav',
+    items: [
+      { id: 'sd-intro',   label: 'Introduksjon' },
+      { id: 'sd-regler',  label: 'Regler'       },
+    ],
+  },
+  {
+    section: 'Teori',
+    id: 'sd-theory',
+    items: [
+      { id: 'sd-motor',   label: 'Motor'        },
+      { id: 'sd-vær',     label: 'Vær'          },
+    ],
+  },
+]
+
+// Demo-wrapper: simulerer et sideoppsett rundt den flytende sidebaren
+function DemoLayout({ children, height = 320 }) {
+  return (
+    <div style={{
+      display: 'flex',
+      background: 'var(--color-neutral-1)',
+      borderRadius: 'var(--radius-xl)',
+      minHeight: height,
+      overflow: 'hidden',
+      border: '1px solid var(--color-neutral-2)',
+    }}>
+      {children}
+      <div style={{
+        flex: 1,
+        padding: 'var(--space-6)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'var(--color-neutral-5)',
+        fontSize: 'var(--font-size-sm)',
+      }}>
+        Hovedinnhold
+      </div>
+    </div>
+  )
+}
+
+// ─── Sidebar showcase ─────────────────────────────────────────────────────────
+function SidebarShowcase() {
+  const [active1, setActive1] = useState('sd-colors')
+  const [active2, setActive2] = useState(null)
+  const [active3, setActive3] = useState(null)
+
+  const label = {
+    fontSize: 'var(--font-size-sm)',
+    fontWeight: 'var(--font-weight-semibold)',
+    textTransform: 'uppercase',
+    letterSpacing: '0.08em',
+    color: 'var(--color-neutral-7)',
+    marginBottom: 'var(--space-4)',
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-10)' }}>
+
+      {/* Floating — ekspandert */}
+      <div>
+        <p style={label}>Floating — alltid ekspandert</p>
+        <DemoLayout>
+          <Sidebar
+            variant="floating"
+            nav={SIDEBAR_DEMO_NAV}
+            active={active1}
+            onSelect={setActive1}
+          />
+        </DemoLayout>
+      </div>
+
+      {/* Floating — accordion */}
+      <div>
+        <p style={label}>Floating — accordion (starter kollapset)</p>
+        <DemoLayout>
+          <Sidebar
+            variant="floating"
+            accordion
+            nav={SIDEBAR_DEMO_NAV}
+            active={active2}
+            onSelect={setActive2}
+          />
+        </DemoLayout>
+      </div>
+
+      {/* Floating — klikkbare seksjonslabeler (navigasjon) */}
+      <div>
+        <p style={label}>Floating — klikkbare seksjoner</p>
+        <DemoLayout>
+          <Sidebar
+            variant="floating"
+            nav={SIDEBAR_DEMO_NAV_CLICKABLE}
+            active={active3}
+            onSelect={setActive3}
+          />
+        </DemoLayout>
+      </div>
+
+    </div>
+  )
+}
+
 // ─── Button showcase (stateful, bruker ToggleRow for fargeskjema) ─────────────
 function ButtonShowcase() {
   const [color, setColor] = useState('first')
@@ -183,6 +311,11 @@ const NAV = [
         id: 'button',
         label: 'Button',
         component: <ButtonShowcase />,
+      },
+      {
+        id: 'sidebar',
+        label: 'Sidebar',
+        component: <SidebarShowcase />,
       },
       {
         id: 'option-card',

@@ -12,15 +12,15 @@
   grid-template-columns: 28% 1fr;
   gap: var(--space-8);
   padding: var(--space-5) 0;
-  border-top: 1px solid var(--color-neutral-2);
+  border-top: 1px solid var(--color-neutral-3);
 }
 
 .dl-row:last-child {
-  border-bottom: 1px solid var(--color-neutral-2);
+  border-bottom: 1px solid var(--color-neutral-3);
 }
 
 .dl-term {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
   color: var(--color-neutral-9);
   line-height: var(--line-height-normal);
