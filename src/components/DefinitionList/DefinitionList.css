@@ -1,0 +1,40 @@
+/* ============================================================
+   DefinitionList — to-kolonne-liste
+   ============================================================ */
+
+.dl {
+  display: flex;
+  flex-direction: column;
+}
+
+.dl-row {
+  display: grid;
+  grid-template-columns: 28% 1fr;
+  gap: var(--space-8);
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--color-neutral-2);
+}
+
+.dl-row:last-child {
+  border-bottom: 1px solid var(--color-neutral-2);
+}
+
+.dl-term {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-9);
+  line-height: var(--line-height-normal);
+}
+
+.dl-desc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.dl-desc p {
+  font-size: var(--font-size-md);
+  color: var(--color-neutral-9);
+  line-height: var(--line-height-loose);
+}

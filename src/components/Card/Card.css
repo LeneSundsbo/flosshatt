@@ -45,7 +45,7 @@
 
 /* Glass-variant */
 .c-card--glass {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(4px) saturate(1.8);
   -webkit-backdrop-filter: blur(4px) saturate(1.8);
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -89,3 +89,43 @@
     padding: var(--space-6) var(--space-8);
   }
 }
+
+/* ── Chamfer-variant ────────────────────────────────────────────────────────
+   Kuttet hjørne øvre høyre. Formen styres av clip-path: path() beregnet
+   dynamisk av ResizeObserver i Card.jsx.
+   box-shadow følger ikke clip-path → bruker filter: drop-shadow() i stedet.
+   overflow: visible slik at fokusringer ikke klippes av komponenten selv.
+   ─────────────────────────────────────────────────────────────────────── */
+
+/* Wrapper bærer drop-shadow — må ligge UTENPÅ clip-path-elementet,
+   ellers klipper clip-path skyggen bort */
+.c-card-chamfer-wrap {
+  filter: drop-shadow(0 4px 16px rgb(17 20 26 / 0.10));
+}
+
+[data-theme="dark"] .c-card-chamfer-wrap {
+  filter: drop-shadow(0 4px 20px rgb(0 0 0 / 0.40))
+          drop-shadow(0 0 0 1px rgb(255 255 255 / 0.06));
+}
+
+.c-card--chamfer {
+  /* Kutt-størrelse og endepunkt-radius — overstyr per app med CSS-variabel */
+  --card-chamfer-size:   2.5rem;          /* where much of the corner is removed */
+  --card-chamfer-radius: var(--radius-xl);/* rounding of the two cut endpoints   */
+
+  overflow: visible;                      /* clip-path clips; overflow must not   */
+  border-radius: 0;                       /* clip-path handles all rounding       */
+  box-shadow: none;                       /* skygge ligger på wrapper, ikke her   */
+}
+
+/* Extra innrykk i header-området nær kuttet (øverst til høyre) */
+.c-card--chamfer .c-header {
+  padding-right: calc(var(--space-6) + var(--card-chamfer-size) * 0.55);
+}
+
+@container (min-width: 480px) {
+  .c-card--chamfer .c-header {
+    padding-right: calc(var(--space-8) + var(--card-chamfer-size) * 0.55);
+  }
+}
+

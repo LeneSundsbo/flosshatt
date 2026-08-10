@@ -60,19 +60,19 @@
   min-height: 48px;
 }
 
-/* Primary */
+/* Primary — farger via CSS custom properties slik at color scheme-klasser kan overstyre */
 .btn--primary {
-  background: var(--color-first-3);
-  color: var(--color-first-9);
+  background: var(--btn-bg, var(--color-first-3));
+  color:      var(--btn-text, var(--color-first-9));
 }
 
 .btn--primary:hover:not(:disabled) {
-  background: var(--color-first-2);
+  background: var(--btn-bg-hover, var(--color-first-2));
 }
 
 .btn--primary:active:not(:disabled) {
-  background: var(--color-first-9);
-  color: var(--color-neutral-0);
+  background: var(--btn-bg-active, var(--color-first-9));
+  color:      var(--btn-text-active, var(--color-neutral-0));
   box-shadow: inset 0 1px 3px rgb(0 0 0 / 0.2);
 }
 
@@ -113,15 +113,13 @@
   flex-shrink: 0;
 }
 
-/* Dark mode */
+/* ── Dark mode ─────────────────────────────────────────────────────────────── */
 [data-theme="dark"] .btn--primary {
-  background: var(--color-first-7-dk);
-  color: var(--color-first-9-dk);
-}
-
-[data-theme="dark"] .btn--primary:hover:not(:disabled) {
-  background: var(--color-first-9-dk);
-  color: var(--color-first-7-dk);
+  --btn-bg:          var(--color-first-7-dk);
+  --btn-text:        var(--color-first-9-dk);
+  --btn-bg-hover:    var(--color-first-9-dk);
+  --btn-bg-active:   var(--color-first-5-dk);
+  --btn-text-active: var(--color-first-1-dk);
 }
 
 [data-theme="dark"] .btn--secondary {
@@ -140,4 +138,41 @@
 
 [data-theme="dark"] .btn--ghost:hover:not(:disabled) {
   background: var(--color-neutral-7);
+}
+
+/* ── Color scheme-modifikatorer ─────────────────────────────────────────────
+   Plassert etter dark mode: samme spesifisitet (0,2,0) → kilderekkefølge vinner.
+   Eksplisitt valgt fargeskjema overstyrer alltid mørk modus-standardene.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+.btn--primary.btn--first-light {
+  --btn-bg:          var(--color-first-3);
+  --btn-text:        var(--color-first-9);
+  --btn-bg-hover:    var(--color-first-2);
+  --btn-bg-active:   var(--color-first-9);
+  --btn-text-active: var(--color-neutral-0);
+}
+
+.btn--primary.btn--first-dark {
+  --btn-bg:          var(--color-first-7);
+  --btn-text:        var(--color-neutral-0);
+  --btn-bg-hover:    var(--color-first-9);
+  --btn-bg-active:   var(--color-first-7);
+  --btn-text-active: var(--color-neutral-0);
+}
+
+.btn--primary.btn--second-light {
+  --btn-bg:          var(--color-second-3);
+  --btn-text:        var(--color-second-9);
+  --btn-bg-hover:    var(--color-second-2);
+  --btn-bg-active:   var(--color-second-9);
+  --btn-text-active: var(--color-neutral-0);
+}
+
+.btn--primary.btn--second-dark {
+  --btn-bg:          var(--color-second-7);
+  --btn-text:        var(--color-neutral-0);
+  --btn-bg-hover:    var(--color-second-9);
+  --btn-bg-active:   var(--color-second-7);
+  --btn-text-active: var(--color-neutral-0);
 }

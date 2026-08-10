@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Sidebar } from './components/Sidebar/Sidebar'
 import { FloatingNav } from './components/FloatingNav/FloatingNav'
 import { ProgressBar } from './components/ProgressBar/ProgressBar'
 import { FloatingMenu } from './components/FloatingMenu/FloatingMenu'
@@ -14,8 +15,101 @@ import { Button } from './components/Button/Button'
 import { OptionCard, OptionCardGroup } from './components/OptionCard/OptionCard'
 import { Card, CardGroup } from './components/Card/Card'
 import { IconCard, IconCardGroup } from './components/IconCard/IconCard'
+import { DefinitionList } from './components/DefinitionList/DefinitionList'
 import { Shield, Clock, Users, ChartLine } from '@phosphor-icons/react'
 import './App.css'
+
+// ─── Button showcase (stateful, bruker ToggleRow for fargeskjema) ─────────────
+function ButtonShowcase() {
+  const [color, setColor] = useState('first')
+  const [shade, setShade] = useState('light')
+
+  function handleScheme(value) {
+    const [c, s] = value.split('-')
+    setColor(c)
+    setShade(s)
+  }
+
+  const sectionLabel = {
+    fontSize: 'var(--font-size-sm)',
+    fontWeight: 'var(--font-weight-semibold)',
+    textTransform: 'uppercase',
+    letterSpacing: '0.08em',
+    color: 'var(--color-neutral-7)',
+    marginBottom: 'var(--space-4)',
+  }
+  const row = { display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap', alignItems: 'center' }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-10)' }}>
+
+      {/* Fargeskjema */}
+      <div>
+        <p style={sectionLabel}>Fargeskjema</p>
+        <ToggleRow
+          options={[
+            { value: 'first-light',  label: 'First lys'   },
+            { value: 'first-dark',   label: 'First mørk'  },
+            { value: 'second-light', label: 'Second lys'  },
+            { value: 'second-dark',  label: 'Second mørk' },
+          ]}
+          defaultValue="first-light"
+          onChange={handleScheme}
+        />
+      </div>
+
+      {/* Varianter */}
+      <div>
+        <p style={sectionLabel}>Varianter</p>
+        <div style={row}>
+          <Button variant="primary" color={color} shade={shade}>Primary</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="ghost">Ghost</Button>
+        </div>
+      </div>
+
+      {/* Størrelser */}
+      <div>
+        <p style={sectionLabel}>Størrelser</p>
+        <div style={row}>
+          <Button size="sm" color={color} shade={shade}>Liten</Button>
+          <Button size="md" color={color} shade={shade}>Medium</Button>
+          <Button size="lg" color={color} shade={shade}>Stor</Button>
+        </div>
+      </div>
+
+      {/* Med ikon */}
+      <div>
+        <p style={sectionLabel}>Med ikon</p>
+        <div style={row}>
+          <Button variant="primary" color={color} shade={shade} iconLeft={<Shield size={16} weight="bold" />}>Med ikon venstre</Button>
+          <Button variant="secondary" iconRight={<ChartLine size={16} weight="bold" />}>Med ikon høyre</Button>
+          <Button variant="ghost" iconLeft={<Users size={16} weight="bold" />}>Ghost med ikon</Button>
+        </div>
+      </div>
+
+      {/* Deaktivert */}
+      <div>
+        <p style={sectionLabel}>Deaktivert</p>
+        <div style={row}>
+          <Button variant="primary" color={color} shade={shade} disabled>Primary</Button>
+          <Button variant="secondary" disabled>Secondary</Button>
+          <Button variant="ghost" disabled>Ghost</Button>
+        </div>
+      </div>
+
+      {/* Full bredde */}
+      <div>
+        <p style={sectionLabel}>Full bredde</p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', maxWidth: '320px' }}>
+          <Button variant="primary" color={color} shade={shade} fullWidth>Full bredde</Button>
+          <Button variant="ghost" fullWidth>Full bredde ghost</Button>
+        </div>
+      </div>
+
+    </div>
+  )
+}
 
 const NAV = [
   {
@@ -88,60 +182,7 @@ const NAV = [
       {
         id: 'button',
         label: 'Button',
-        component: (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-10)' }}>
-
-            {/* Varianter */}
-            <div>
-              <p style={{ fontSize: 'var(--font-size-sm)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-4)' }}>Varianter</p>
-              <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap', alignItems: 'center' }}>
-                <Button variant="primary">Primary</Button>
-                <Button variant="secondary">Secondary</Button>
-                <Button variant="ghost">Ghost</Button>
-              </div>
-            </div>
-
-            {/* Størrelser */}
-            <div>
-              <p style={{ fontSize: 'var(--font-size-sm)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-4)' }}>Størrelser</p>
-              <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap', alignItems: 'center' }}>
-                <Button size="sm">Liten</Button>
-                <Button size="md">Medium</Button>
-                <Button size="lg">Stor</Button>
-              </div>
-            </div>
-
-            {/* Med ikoner */}
-            <div>
-              <p style={{ fontSize: 'var(--font-size-sm)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-4)' }}>Med ikon</p>
-              <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap', alignItems: 'center' }}>
-                <Button variant="primary" iconLeft={<Shield size={16} weight="bold" />}>Med ikon venstre</Button>
-                <Button variant="secondary" iconRight={<ChartLine size={16} weight="bold" />}>Med ikon høyre</Button>
-                <Button variant="ghost" iconLeft={<Users size={16} weight="bold" />}>Ghost med ikon</Button>
-              </div>
-            </div>
-
-            {/* Deaktivert */}
-            <div>
-              <p style={{ fontSize: 'var(--font-size-sm)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-4)' }}>Deaktivert</p>
-              <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap', alignItems: 'center' }}>
-                <Button variant="primary" disabled>Primary</Button>
-                <Button variant="secondary" disabled>Secondary</Button>
-                <Button variant="ghost" disabled>Ghost</Button>
-              </div>
-            </div>
-
-            {/* Full bredde */}
-            <div>
-              <p style={{ fontSize: 'var(--font-size-sm)', fontWeight: 'var(--font-weight-semibold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-neutral-7)', marginBottom: 'var(--space-4)' }}>Full bredde</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', maxWidth: '320px' }}>
-                <Button variant="primary" fullWidth>Full bredde</Button>
-                <Button variant="ghost" fullWidth>Full bredde ghost</Button>
-              </div>
-            </div>
-
-          </div>
-        ),
+        component: <ButtonShowcase />,
       },
       {
         id: 'option-card',
@@ -240,6 +281,15 @@ const NAV = [
             </Card>
             <Card variant="glass">
               Glass uten header.
+            </Card>
+            <Card chamfer title="Chamfer — lys">
+              Kuttet hjørne øvre høyre. Tre avrundede hjørner + diagonal fasett med avrundede endepunkter.
+            </Card>
+            <Card chamfer variant="dark" title="Chamfer — mørk">
+              Fungerer med eksisterende fargevarianter uten å re-implementere farge.
+            </Card>
+            <Card chamfer variant="glass" title="Chamfer — glass">
+              Kombinert med glass-effekten.
             </Card>
           </CardGroup>
         ),
@@ -376,6 +426,43 @@ const NAV = [
           </div>
         ),
       },
+      {
+        id: 'definition-list',
+        label: 'Definition List',
+        component: (
+          <DefinitionList items={[
+            {
+              term: 'Flyteutstyr',
+              description: [
+                'Redningsvest, flytevest, flytejakke, flytedrakt eller flytejakke er påbudt i alle båter.',
+                'Les mer i kapittel 2.7 «Flyteplagg».',
+              ],
+            },
+            {
+              term: 'Dødmannsknapp',
+              description: 'En snor festet til føreren, med funksjon å stoppe motoren dersom føreren forlater plassen sin. Spesielt viktig hvis du er uheldig å ramle over bord når du er alene i båten.',
+            },
+            {
+              term: 'Stige',
+              description: 'Stige, trinn eller noe annet som gjør det mulig å komme seg opp i båten fra vannet.',
+            },
+            {
+              term: 'Lydsignalapparat',
+              description: [
+                'Et redskap som bremser båten og holder baugen opp mot vind og bølger. Nyttig ved f.eks. motorstopp.',
+                'Les mer i kapittel 2.7 «Lydsignaler» for krav til utstyr.',
+              ],
+            },
+            {
+              term: 'Brannslukkingsapparat',
+              description: [
+                'Bærbart brannslukkingsapparat med pulver, skum, CO2 eller vann på minimum 2 kg.',
+                'Les mer i kapittel 2.7 «Brannslukning» for krav til utstyr.',
+              ],
+            },
+          ]} />
+        ),
+      },
       { id: 'drops', label: 'Dråper ✦' },
       {
         id: 'sticky-note',
@@ -404,31 +491,14 @@ export default function App() {
 
   return (
     <div className="app">
-      <aside className="sidebar">
-        <div className="sidebar-logo">
-          <Logo height={28} className="sidebar-logo-svg" />
-          <span className="sidebar-logo-tag">Designsystem</span>
-        </div>
-
-        <ThemeToggle />
-
-        <nav className="sidebar-nav">
-          {NAV.map((group) => (
-            <div key={group.section} className="sidebar-group">
-              <p className="sidebar-section-label">{group.section}</p>
-              {group.items.map((c) => (
-                <button
-                  key={c.id}
-                  className={`sidebar-item${active === c.id ? ' sidebar-item--active' : ''}`}
-                  onClick={() => setActive(c.id)}
-                >
-                  {c.label}
-                </button>
-              ))}
-            </div>
-          ))}
-        </nav>
-      </aside>
+      <Sidebar
+        logo={<Logo height={28} className="sidebar-logo-svg" />}
+        logoTag="Designsystem"
+        topSlot={<ThemeToggle />}
+        nav={NAV}
+        active={active}
+        onSelect={setActive}
+      />
 
       {dropsOn && <DropsLayer />}
 

@@ -3,6 +3,8 @@ import './Button.css'
 export function Button({
   children,
   variant = 'primary',
+  color = 'first',   // 'first' | 'second'  – kun primary-varianten bruker dette
+  shade = 'light',   // 'light' | 'dark'
   size = 'md',
   disabled = false,
   type = 'button',
@@ -11,9 +13,12 @@ export function Button({
   fullWidth = false,
   onClick,
 }) {
+  const schemeClass = variant === 'primary' ? `btn--${color}-${shade}` : ''
+
   const classes = [
     'btn',
     `btn--${variant}`,
+    schemeClass,
     `btn--${size}`,
     fullWidth ? 'btn--full' : '',
   ].filter(Boolean).join(' ')

@@ -4,33 +4,33 @@ import './ColorPalette.css'
 const PALETTES = [
   {
     name: 'First',
-    vars:    ['--color-first-1',    '--color-first-2',    '--color-first-3',    '--color-first-7',    '--color-first-8',    '--color-first-9'],
-    darkVars:['--color-first-1-dk', '--color-first-2-dk', '--color-first-3-dk', '--color-first-7-dk', '--color-first-8-dk', '--color-first-9-dk'],
+    vars:    ['--color-first-1',    '--color-first-2',    '--color-first-3',    '--color-first-5',    '--color-first-7',    '--color-first-8',    '--color-first-9'],
+    darkVars:['--color-first-1-dk', '--color-first-2-dk', '--color-first-3-dk', '--color-first-5-dk', '--color-first-7-dk', '--color-first-8-dk', '--color-first-9-dk'],
   },
   {
     name: 'Second',
-    vars:    ['--color-second-1',    '--color-second-2',    '--color-second-3',    '--color-second-7',    '--color-second-8',    '--color-second-9'],
-    darkVars:['--color-second-1-dk', '--color-second-2-dk', '--color-second-3-dk', '--color-second-7-dk', '--color-second-8-dk', '--color-second-9-dk'],
+    vars:    ['--color-second-1',    '--color-second-2',    '--color-second-3',    '--color-second-5',    '--color-second-7',    '--color-second-8',    '--color-second-9'],
+    darkVars:['--color-second-1-dk', '--color-second-2-dk', '--color-second-3-dk', '--color-second-5-dk', '--color-second-7-dk', '--color-second-8-dk', '--color-second-9-dk'],
   },
   {
     name: 'Neutral',
-    vars:    ['--color-neutral-0',    '--color-neutral-1',    '--color-neutral-2',    '--color-neutral-3',    '--color-neutral-7',    '--color-neutral-8',    '--color-neutral-9'],
-    darkVars:['--color-neutral-0-dk', '--color-neutral-1-dk', '--color-neutral-2-dk', '--color-neutral-3-dk', '--color-neutral-7-dk', '--color-neutral-8-dk', '--color-neutral-9-dk'],
+    vars:    ['--color-neutral-0',    '--color-neutral-1',    '--color-neutral-2',    '--color-neutral-3',    '--color-neutral-5',    '--color-neutral-7',    '--color-neutral-8',    '--color-neutral-9'],
+    darkVars:['--color-neutral-0-dk', '--color-neutral-1-dk', '--color-neutral-2-dk', '--color-neutral-3-dk', '--color-neutral-5-dk', '--color-neutral-7-dk', '--color-neutral-8-dk', '--color-neutral-9-dk'],
   },
   {
     name: 'Success',
-    vars:    ['--color-success-1',    '--color-success-2',    '--color-success-3',    '--color-success-7',    '--color-success-8',    '--color-success-9'],
-    darkVars:['--color-success-1-dk', '--color-success-2-dk', '--color-success-3-dk', '--color-success-7-dk', '--color-success-8-dk', '--color-success-9-dk'],
+    vars:    ['--color-success-1',    '--color-success-2',    '--color-success-3',    '--color-success-5',    '--color-success-7',    '--color-success-8',    '--color-success-9'],
+    darkVars:['--color-success-1-dk', '--color-success-2-dk', '--color-success-3-dk', '--color-success-5-dk', '--color-success-7-dk', '--color-success-8-dk', '--color-success-9-dk'],
   },
   {
     name: 'Warning',
-    vars:    ['--color-warning-1',    '--color-warning-2',    '--color-warning-3',    '--color-warning-7',    '--color-warning-8',    '--color-warning-9'],
-    darkVars:['--color-warning-1-dk', '--color-warning-2-dk', '--color-warning-3-dk', '--color-warning-7-dk', '--color-warning-8-dk', '--color-warning-9-dk'],
+    vars:    ['--color-warning-1',    '--color-warning-2',    '--color-warning-3',    '--color-warning-5',    '--color-warning-7',    '--color-warning-8',    '--color-warning-9'],
+    darkVars:['--color-warning-1-dk', '--color-warning-2-dk', '--color-warning-3-dk', '--color-warning-5-dk', '--color-warning-7-dk', '--color-warning-8-dk', '--color-warning-9-dk'],
   },
   {
     name: 'Error',
-    vars:    ['--color-error-1',    '--color-error-2',    '--color-error-3',    '--color-error-7',    '--color-error-8',    '--color-error-9'],
-    darkVars:['--color-error-1-dk', '--color-error-2-dk', '--color-error-3-dk', '--color-error-7-dk', '--color-error-8-dk', '--color-error-9-dk'],
+    vars:    ['--color-error-1',    '--color-error-2',    '--color-error-3',    '--color-error-5',    '--color-error-7',    '--color-error-8',    '--color-error-9'],
+    darkVars:['--color-error-1-dk', '--color-error-2-dk', '--color-error-3-dk', '--color-error-5-dk', '--color-error-7-dk', '--color-error-8-dk', '--color-error-9-dk'],
   },
 ]
 
