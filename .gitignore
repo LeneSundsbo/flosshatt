@@ -12,3 +12,4 @@ dist/
 # Editor
 .DS_Store
 .vscode/
+SPEC.md
